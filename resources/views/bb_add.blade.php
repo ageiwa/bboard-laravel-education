@@ -1,0 +1,22 @@
+@extends('layouts.base')
+
+@section('title', 'Добавление объявления :: Мои объявления')
+
+@section('main')
+<form action="{{ route('bb.store') }}" method="POST">
+    @csrf
+    <div class="form-group">
+        <label for="txtTitle">Товар</label>
+        <input name="title" id="txtTitle" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="txtContent">Товар</label>
+        <input name="content" id="txtContent" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="txtPrice">Товар</label>
+        <input name="price" id="txtPrice" class="form-control">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Добавить">
+</form>
+@endsection
