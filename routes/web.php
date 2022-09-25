@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BbsController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,9 @@ use App\Http\Controllers\BbsController;
 // });
 
 Route::get('/', [BbsController::class, 'index'])->name('index');
-Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home/add', [HomeController::class, 'showAddBbForm'])->name('bb.add');
+Route::post('/home', [HomeController::class, 'storeBb'])->name('bb.store');
+Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
