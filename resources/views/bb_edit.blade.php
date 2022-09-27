@@ -19,7 +19,7 @@
         <label for="txtContent">Описание</label>
         <input name="content" id="txtContent" class="form-control @error('content') is-invalid @enderror" value="{{ old('content', $bb->content) }}">
         @error('content')
-        <span>
+        <span class="invalid-feedback">
             <strong>{{ $message }}</strong>
         </span>
         @enderror
@@ -28,7 +28,7 @@
         <label for="txtPrice">Цена</label>
         <input name="price" id="txtPrice" class="form-control @error('price') is-invalid @enderror" value="{{ old('price', $bb->price) }}">
         @error('price')
-        <span>
+        <span class="invalid-feedback">
             <strong>{{ $message }}</strong>
         </span>
         @enderror
